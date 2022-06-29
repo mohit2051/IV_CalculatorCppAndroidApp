@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context=".CalculatorActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcomeMessage"
+        android:text="Welcome to Implied Volatility Calculator!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:typeface="serif"
+        android:gravity="center"
+        android:layout_margin="25dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spotPrice"
+        android:layout_below="@+id/welcomeMessage"
+        android:background="#30ffffff"
+        android:hint="S: Underlying spot price"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/strikePrice"
+        android:layout_below="@+id/spotPrice"
+        android:background="#30ffffff"
+        android:hint="K: Strike price"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/riskFreeRate"
+        android:layout_below="@+id/strikePrice"
+        android:background="#30ffffff"
+        android:hint="r: Risk-free rate"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeToMaturity"
+        android:layout_below="@+id/riskFreeRate"
+        android:background="#30ffffff"
+        android:hint="T: Time to Maturity"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionPrice"
+        android:layout_below="@+id/timeToMaturity"
+        android:background="#30ffffff"
+        android:hint="C: Call option market price"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:inputType="numberDecimal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculateBtn"
+        android:text="CALCULATE"
+        android:textSize="27sp"
+        android:layout_below="@+id/optionPrice"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_margin="20dp"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/message123"-->
+<!--        android:layout_below="@+id/calculateBtn"-->
+<!--        android:text="Implied Volatility = "-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:typeface="serif"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_margin="25dp" />-->
+
+</RelativeLayout>
