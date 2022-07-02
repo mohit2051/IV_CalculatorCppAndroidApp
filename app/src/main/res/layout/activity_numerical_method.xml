@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context=".NumericalMethodActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcomeMessage"
+        android:text="Welcome to Implied Volatility Calculator!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:typeface="serif"
+        android:gravity="center"
+        android:layout_margin="25dp" />
+
+    <TextView
+        android:id="@+id/select_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeMessage"
+        android:text="Select Numerical Method:"
+        android:typeface="serif"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="25sp"/>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="#30ffffff"
+        android:layout_below="@+id/select_method">
+
+        <RadioButton
+            android:id="@+id/intervalBisection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interval Bisection method"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textSize="25sp"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/newtonRaphson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Newton Raphson method"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textSize="25sp" />
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/text_view_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your selection: "
+        android:textSize="25sp"
+        android:padding="20dp"
+        android:layout_margin="15dp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/radio_group"
+        android:layout_centerHorizontal="true"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirm"
+        android:text="Confirm Selection"
+        android:textSize="27sp"
+        android:layout_below="@+id/text_view_selected"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_margin="20dp"/>
+
+</RelativeLayout>

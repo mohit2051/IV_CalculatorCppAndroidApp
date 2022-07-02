@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         double K=0.0,S=0.0,r=0.0,T=0.0,V=0.0;
+        String numericalMethod = "";
         Bundle bundle = getIntent().getExtras();
         if(bundle != null) {
+             numericalMethod = bundle.getString("numerical_method");
              K = Double.parseDouble(bundle.getString("K"));
              S = Double.parseDouble(bundle.getString("S"));
              r = Double.parseDouble(bundle.getString("r"));
@@ -38,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = binding.sampleText;
         //tv.setText(stringFromJNI());
+        int rootMethod=1;
+        rootMethod = numericalMethod.equals("Interval Bisection method") ? 1 : 2 ;
         try {
-            tv.setText("Implied Volatility = " + String.valueOf(impliedVolCalc(1,S,K,r,T,V)));
+            tv.setText("Implied Volatility = " + String.valueOf(impliedVolCalc(rootMethod,S,K,r,T,V)));
         }
         catch (Exception e) {
             Log.e("Failed", e.toString());

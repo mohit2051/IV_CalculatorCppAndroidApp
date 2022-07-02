@@ -35,7 +35,7 @@ public class LoginPageActivity extends AppCompatActivity {
                     //Toast.makeText(MainActivity.this, "Login Successful",Toast.LENGTH_SHORT).show();
                     //startActivity(new Intent(MainActivity.this, SecondActivity.class));
 
-                    Intent intent = new Intent(LoginPageActivity.this, CalculatorActivity.class);
+                    Intent intent = new Intent(LoginPageActivity.this, NumericalMethodActivity.class);
                     startActivity(intent);
                 }
                 else {

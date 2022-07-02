@@ -31,6 +31,10 @@ public class CalculatorActivity extends AppCompatActivity {
 
 //        TextView message = (TextView) findViewById(R.id.message123);
 
+        Intent intent = getIntent();
+
+        String numericalMethod = intent.getStringExtra("numerical_method");
+
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +49,7 @@ public class CalculatorActivity extends AppCompatActivity {
 
                 Bundle bundle  = new Bundle();
 
+                bundle.putString("numerical_method",String.valueOf(numericalMethod));
                 bundle.putString("K",String.valueOf(K));
                 bundle.putString("S",String.valueOf(S));
                 bundle.putString("r",String.valueOf(r));
