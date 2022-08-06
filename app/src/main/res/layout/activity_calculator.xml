@@ -13,12 +13,12 @@
         android:id="@+id/welcomeMessage"
         android:text="Enter parameter values"
         android:textSize="25sp"
-        android:padding="25dp"
-        android:textStyle="normal"
+        android:padding="20dp"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:typeface="serif"
         android:gravity="center"
-        android:layout_margin="25dp" />
+        android:layout_margin="20dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -72,13 +72,45 @@
         android:padding="20dp"
         android:inputType="numberDecimal" />
 
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="#30ffffff"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_below="@+id/timeToMaturity">
+
+        <RadioButton
+            android:id="@+id/callOption"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="Call option" />
+
+        <RadioButton
+            android:id="@+id/putOption"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="Put option" />
+    </RadioGroup>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/optionPrice"
-        android:layout_below="@+id/timeToMaturity"
+        android:layout_below="@+id/radio_group"
         android:background="#30ffffff"
-        android:hint="C: Call option market price"
+        android:hint="V: Option market price"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:layout_margin="10dp"
@@ -90,11 +122,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/calculateBtn"
         android:text="CALCULATE"
-        android:textSize="27sp"
+        android:textSize="32sp"
         android:layout_below="@+id/optionPrice"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:layout_margin="20dp"/>
+        android:layout_margin="10dp"/>
 
 <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->

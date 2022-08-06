@@ -21,7 +21,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        native-lib.cpp black_scholes.cpp black_scholes.h bs_prices.h interval_bisection.h newton_raphson.h)
+        native-lib.cpp black_scholes_model.cpp black_scholes_model.h black_scholes_prices.h method_intervalbisection.h method_newtonraphson.h)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

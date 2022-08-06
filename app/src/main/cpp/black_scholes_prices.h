@@ -2,22 +2,21 @@
 // Created by DELL on 28-06-2022.
 //
 
-#ifndef IMPLIED_VOLATILITY_CALCULATOR_BS_PRICES_H
-#define IMPLIED_VOLATILITY_CALCULATOR_BS_PRICES_H
+#ifndef IMPLIED_VOLATILITY_CALCULATOR_BLACK_SCHOLES_PRICES_H
+#define IMPLIED_VOLATILITY_CALCULATOR_BLACK_SCHOLES_PRICES_H
 
 #define _USE_MATH_DEFINES
 
 #include <iostream>
 #include <cmath>
 
-// Standard normal probability density function
+// pdf(probability density function) - standard normal
 double norm_pdf(const double x) {
     return (1.0 / (pow(2 * M_PI, 0.5))) * exp(-0.5 * x * x);
 }
 
-// An approximation to the cumulative distribution function
-// for the standard normal distribution
-// Note: This is a recursive function
+//cdf (cumulative distribution function) which is defined for
+// standard normal distribution
 double norm_cdf(const double x) {
     double k = 1.0 / (1.0 + 0.2316419 * x);
     double k_sum = k * (0.319381530 + k * (-0.356563782 + k * (1.781477937 + k * (-1.821255978 + 1.330274429 * k))));
@@ -30,8 +29,9 @@ double norm_cdf(const double x) {
     }
 }
 
-// This calculates d_j, for j in {1,2}. This term appears in the closed
-// form solution for the European call or put price
+
+// calculates d_j where j is 1 or 2. Found when finding closed form solution in
+// Black Scholes model for European Vanilla option
 double d_j(const int j, const double S, const double K, const double r, const double sigma, const double T) {
     return (log(S / K) + (r + (pow(-1, j - 1)) * 0.5 * sigma * sigma) * T) / (sigma * (pow(T, 0.5)));
 }
@@ -44,7 +44,7 @@ double call_price(const double S, const double K, const double r, const double s
 }
 
 double put_price(const double S, const double K, const double r, const double sigma, const double T) {
-    return (K * exp(-r * T) * norm_cdf((-1) * d_j(1, S, K, r, sigma, T)) - S * norm_cdf((-1) * d_j(2, S, K, r, sigma, T)));
+    return (K * exp(-r * T) * norm_cdf((-1) * d_j(2, S, K, r, sigma, T)) - S * norm_cdf((-1) * d_j(1, S, K, r, sigma, T)));
 }
 
 double call_vega(const double S, const double K, const double r, const double sigma, const double T) {
@@ -52,4 +52,4 @@ double call_vega(const double S, const double K, const double r, const double si
 }
 
 
-#endif //IMPLIED_VOLATILITY_CALCULATOR_BS_PRICES_H
+#endif //IMPLIED_VOLATILITY_CALCULATOR_BLACK_SCHOLES_PRICES_H

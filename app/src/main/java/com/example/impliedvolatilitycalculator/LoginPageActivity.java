@@ -21,6 +21,7 @@ public class LoginPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
+        //defining variables and identifying them by their ids
         EditText username = (EditText) findViewById(R.id.username);
         EditText password = (EditText) findViewById(R.id.password);
 
@@ -30,15 +31,17 @@ public class LoginPageActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    //correct password
-                    //Toast.makeText(MainActivity.this, "Login Successful",Toast.LENGTH_SHORT).show();
-                    //startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                //check if password is correct
+                if(username.getText().toString().equals("admin123") && password.getText().toString().equals("admin123")){
 
+                    //creating an intent to move to the next page if login is successful
                     Intent intent = new Intent(LoginPageActivity.this, NumericalMethodActivity.class);
                     startActivity(intent);
                 }
+                //else password is incorrect
                 else {
+
+                    //setting a toast message for Login failed in red color
                     Toast toast = Toast.makeText(LoginPageActivity.this, "LOGIN FAILED !!!", Toast.LENGTH_LONG);
                     TextView textView = toast.getView().findViewById(android.R.id.message);
                     textView.setTextColor(Color.WHITE);

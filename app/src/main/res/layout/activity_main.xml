@@ -17,6 +17,9 @@
         android:layout_centerInParent="true"
         android:gravity="center"
         android:textColor="@color/white"
+        android:padding="20dp"
+        android:layout_margin="30dp"
+        android:background="#30ffffff"
         android:typeface="serif"
         android:textColorHighlight="@color/black"/>
 

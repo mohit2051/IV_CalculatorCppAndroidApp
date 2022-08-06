@@ -62,17 +62,7 @@
             android:textSize="25sp" />
 
     </RadioGroup>
-    <TextView
-        android:id="@+id/text_view_selected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your selection: "
-        android:textSize="25sp"
-        android:padding="20dp"
-        android:layout_margin="15dp"
-        android:textColor="@color/white"
-        android:layout_below="@+id/radio_group"
-        android:layout_centerHorizontal="true"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
@@ -80,7 +70,7 @@
         android:id="@+id/confirm"
         android:text="Confirm Selection"
         android:textSize="27sp"
-        android:layout_below="@+id/text_view_selected"
+        android:layout_below="@+id/radio_group"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/design_default_color_secondary"
         android:layout_margin="20dp"/>
