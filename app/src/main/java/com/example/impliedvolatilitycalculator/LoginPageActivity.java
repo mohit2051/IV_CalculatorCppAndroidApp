@@ -41,7 +41,7 @@ public class LoginPageActivity extends AppCompatActivity {
                 //else password is incorrect
                 else {
 
-                    //setting a toast message for Login failed in red color
+                    //sletting a toast message for Login failed in red color
                     Toast toast = Toast.makeText(LoginPageActivity.this, "LOGIN FAILED !!!", Toast.LENGTH_LONG);
                     TextView textView = toast.getView().findViewById(android.R.id.message);
                     textView.setTextColor(Color.WHITE);

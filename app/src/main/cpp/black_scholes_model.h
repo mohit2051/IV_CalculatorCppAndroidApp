@@ -1,41 +1,46 @@
 //
-// Created by DELL on 28-06-2022.
+// Created by Mohit on 28-06-2022.
 //
 
 #ifndef IMPLIED_VOLATILITY_CALCULATOR_BLACK_SCHOLES_MODEL_H
 #define IMPLIED_VOLATILITY_CALCULATOR_BLACK_SCHOLES_MODEL_H
 
+// setting the black-scholes model class
 class BlackScholesModel {
 protected:
-    double S;  // Underlying asset price
-    double K;  // Strike price
-    double r;  // Risk-free rate
-    double T;  // Time to maturity
+    double S;  // Underlying security price
+    double K;  // strike price
+    double r;  // risk free rate
+    double T;  // time to expiration
 
+//initializing the methods that we will implement in the source file
 public:
-    BlackScholesModel(double _S, double _K, double _r, double _T);
+    BlackScholesModel(double S_, double K_, double r_, double T_);
     virtual ~BlackScholesModel();
     virtual double operator()(double sigma) const = 0;
 
 };
 
+//setting the black-scholes model call child class
 class BlackScholesModelCall: public BlackScholesModel {
 public:
-    BlackScholesModelCall(double _S, double _K, double _r, double _T);
+    BlackScholesModelCall(double S_, double K_, double r_, double T_);
     virtual ~BlackScholesModelCall();
     virtual double operator()(double sigma) const;
-    double option_price(double sigma) const;
-    double option_vega(double sigma) const;
+    double optionPrice(double sigma) const;
+    double optionVega(double sigma) const;
 
 };
 
+//setting up the black-scholes model put class
 class BlackScholesModelPut : public BlackScholesModel {
 public:
-    BlackScholesModelPut(double _S, double _K, double _r, double _T);
+    //initializing methods which we will implement in the source file
+    BlackScholesModelPut(double S_, double K_, double r_, double T_);
     virtual ~BlackScholesModelPut();
     virtual double operator()(double sigma) const;
-    double option_price(double sigma) const;
-    double option_vega(double sigma) const;
+    double optionPrice(double sigma) const;
+    double optionVega(double sigma) const;
 
 };
 
